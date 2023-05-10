@@ -8,7 +8,7 @@ import sys
 from setuptools import find_packages, setup
 from setuptools.command.test import test as TestCommand
 
-long_description = open("README.rst", "r").read()
+long_description = open("README.rst").read()
 here = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -45,7 +45,6 @@ class PyTest(TestCommand):
 install_requires = [
     "PyYAML",
     "wrapt",
-    "six>=1.5",
     "yarl",
     # Support for urllib3 >=2 needs Python >=3.10
     # so we need to block urllib3 >=2 for Python <3.10 for now.
@@ -85,7 +84,7 @@ setup(
     author_email="me@kevinmccarthy.org",
     url="https://github.com/kevin1024/vcrpy",
     packages=find_packages(exclude=["tests*"]),
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     install_requires=install_requires,
     license="MIT",
     tests_require=tests_require,
@@ -95,7 +94,6 @@ setup(
         "Intended Audience :: Developers",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
